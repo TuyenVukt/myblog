@@ -1,0 +1,2 @@
+-dang-nhap thì dành cho mọi người
+- Còn những cái còn lại là trong trang quản trị

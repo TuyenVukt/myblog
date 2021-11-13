@@ -1,0 +1,3 @@
+- config để kết nối database
+- flag này đại loại là để ấn duyệt bài viết, product trong đấy thì không liên quan
+- functions thì tạm thời chưa biết
