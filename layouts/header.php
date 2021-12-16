@@ -17,10 +17,10 @@ while ($row4 = mysqli_fetch_array($result4)) {
   <meta charset="utf-8">
   <meta name="description" content="Viết về code kèm theo những trải nghiệm của bản thân mà mình trả qua.">
   <meta name="keywords" content="Code, Dev">
-  <meta name="author" content="Công Quỳnh">
+  <meta name="author" content="Năm anh em siêu nhân">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./admin/pages/public/images/avatars/logo.png">
-  <title>14thFebruary</title>
+  <title>My Blog</title>
   <!-- Style -->
 
   <!-- Bootstrap 4 -->
@@ -96,7 +96,7 @@ while ($row4 = mysqli_fetch_array($result4)) {
                         <a class="nav-link" href="https://www.youtube.com/channel/UChTq3D0pgN-qmv1pNaaXS2g?view_as=subscriber" target="_blank">YOUTUBE</a>
                       </li>-->
                     <li class="nav-item nav-item-login">
-                      <a class="nav-link" href="admin/pages/dang-nhap.php">ĐĂNG NHẬP</a>
+                      <a class="nav-link" href="admin/pages/login.php">ĐĂNG NHẬP</a>
                     </li>
                   </ul>
                 </div>

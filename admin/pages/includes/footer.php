@@ -5,9 +5,7 @@
                 <div class="container-fluid">
                     <div class="row d-flex justify-content-center align-items-center">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                             Thực hiện bởi <a href="https://www.facebook.com/bui.congquynh" target="_blank">Bùi Công Quỳnh</a> - MSSV: 1041360338. <br>
-                             Thực hiện bởi <a href="https://www.facebook.com/bui.congquynh" target="_blank">Bùi Công Quỳnh</a> - MSSV: 1041360338. <br>
-                             Thực hiện bởi <a href="https://www.facebook.com/bui.congquynh" target="_blank">Bùi Công Quỳnh</a> - MSSV: 1041360338. 
+                             
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="text-md-right footer-links d-none d-sm-block">

@@ -64,7 +64,7 @@
                                 $ins = "INSERT account(name, email, password, phone, address, image, date_create, level) VALUES('$name', '$email_reg', '$password', '$phone', '$address', '$name_code', '$date_create', $level)";
                                 mysqli_query($conn, $ins);
                                 echo "<script>alert('Tạo tài khoản thành công');</script>";
-                                echo "<script>location.href='tai-khoan.php';</script>";
+                                echo "<script>location.href='account.php';</script>";
                             }
                             // end check pass
                         }
@@ -97,7 +97,7 @@
                             $ins = "INSERT account(name, email, password, phone, address, image, date_create, level) VALUES('$name', '$email_reg', '$password', '$phone', '$address', 'no-image.jpg', '$date_create', $level)";
                             mysqli_query($conn, $ins);
                             echo "<script>alert('Tạo tài khoản thành công');</script>";
-                            echo "<script>location.href='tai-khoan.php';</script>";
+                            echo "<script>location.href='account.php';</script>";
                         }
                         // end check pass
                     }
@@ -132,7 +132,7 @@
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Trang chính</a></li>
-                                            <li class="breadcrumb-item"><a href="tai-khoan.php" class="breadcrumb-link">Tài khoản</a></li>
+                                            <li class="breadcrumb-item"><a href="account.php" class="breadcrumb-link">Tài khoản</a></li>
                                             <li class="breadcrumb-item active" aria-current="page">Thêm tài khoản</li>
                                         </ol>
                                     </nav>
@@ -197,7 +197,7 @@
                                                     disabled>
                                                 </div>
                                                 <button type="submit" class="btn btn-primary" name="add">Tạo tài khoản</button>
-                                                <a class="btn btn-default" href="tai-khoan.php" role="button">Quay lại <i class="fas fa-undo-alt"></i></a>
+                                                <a class="btn btn-default" href="account.php" role="button">Quay lại <i class="fas fa-undo-alt"></i></a>
                                             </form>
                                         </div>
                                     </div>
@@ -214,6 +214,6 @@
     }
     else
     {
-        echo "<script> location.href='dang-nhap.php'; </script>";
+        echo "<script> location.href='login.php'; </script>";
     }
 ?>

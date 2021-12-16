@@ -51,7 +51,7 @@
                 $update = "UPDATE type_blog SET typename = '$name_type', slug_type = '$slug' WHERE id_type = $id";
                 mysqli_query($conn, $update);
                 echo "<script>alert('Sửa loại thành công');</script>";
-                echo "<script>location.href='loai-blog.php';</script>";
+                echo "<script>location.href='blog-category.php';</script>";
             }
             else
             {
@@ -121,6 +121,6 @@
     }
     else
     {
-        echo "<script> location.href='dang-nhap.php'; </script>";
+        echo "<script> location.href='login.php'; </script>";
     }
 ?>

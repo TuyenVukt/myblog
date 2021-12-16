@@ -29,11 +29,11 @@ while ($row2 = mysqli_fetch_array($result2)) {
           <div class="owl-slider owl-carousel owl-theme">
             <?php foreach ($arr1 as $key) { ?>
               <div class="item">
-                <a href="chi-tiet.php?id=<?php echo $key['id_blog'];  ?>">
+                <a href="details.php?id=<?php echo $key['id_blog'];  ?>">
                   <img src="admin/pages/public/images/blogs/<?php echo $key['image']; ?>" alt="<?php echo $key['image']; ?>" title="<?php echo $key['title']; ?>" class="w-100" />
                 </a>
                 <h2>
-                  <a href="chi-tiet.php?id=<?php echo $key['id_blog'];  ?>"><?php echo $key['title']; ?></a>
+                  <a href="details.php?id=<?php echo $key['id_blog'];  ?>"><?php echo $key['title']; ?></a>
                 </h2>
                 <p class="date">
                   <span>Ngày đăng: <?php echo date_format(date_create($key['date_upload']), "d-m-Y"); ?></span>
@@ -57,11 +57,11 @@ while ($row2 = mysqli_fetch_array($result2)) {
           <div class="row">
             <?php foreach ($arr1 as $key) { ?>
               <div class="col-md-4">
-                <a href="chi-tiet.php?id=<?php echo $key['id_blog'];  ?>">
+                <a href="details.php?id=<?php echo $key['id_blog'];  ?>">
                   <img src="admin/pages/public/images/blogs/<?php echo $key['image']; ?>" alt="<?php echo $key['image']; ?>" title="<?php echo $key['title']; ?>" class="w-100" />
                 </a>
                 <h2 class="title-section-2">
-                  <a href="chi-tiet.php?id=<?php echo $key['id_blog'];  ?>">
+                  <a href="details.php?id=<?php echo $key['id_blog'];  ?>">
                     <?php
                     if (strlen($key['title']) > 50)
                       echo mb_substr($key['title'], 0, 50, 'UTF-8') . "...";
@@ -82,12 +82,12 @@ while ($row2 = mysqli_fetch_array($result2)) {
           <?php foreach ($arr2 as $key) { ?>
             <div class="row section-article">
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 section-image-article">
-                <a href="chi-tiet.php?id=<?php echo $key['id_blog'];  ?>">
+                <a href="details.php?id=<?php echo $key['id_blog'];  ?>">
                   <img src="admin/pages/public/images/blogs/<?php echo $key['image']; ?>" alt="<?php echo $key['image']; ?>" title="<?php echo $key['title']; ?>" class="w-100" />
                 </a>
               </div>
               <div class="col-lg-8 col-md-8 col-sm-4 col-xs-12 detail-article">
-                <h2><a href="chi-tiet.php?id=<?php echo $key['id_blog'];  ?>"><?php echo $key['title']; ?></a></h2>
+                <h2><a href="details.php?id=<?php echo $key['id_blog'];  ?>"><?php echo $key['title']; ?></a></h2>
                 <span>Ngày đăng: <?php echo date_format(date_create($key['date_upload']), "d-m-Y"); ?></span>
                 <p><?php
                     if (strlen($key['summary']) > 100)

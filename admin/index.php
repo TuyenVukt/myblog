@@ -10,6 +10,6 @@
     else
     {
     	// comeback home
-    	header('Location: pages/dang-nhap.php');
+    	header('Location: pages/login.php');
     }
 ?>

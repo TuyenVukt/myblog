@@ -24,7 +24,7 @@
                 <h2 class="title-right-box">Thẻ Tag</h2>
                 <ul class="category-right">
                   <?php foreach ($arr4 as $key) { ?>
-                  <li><a href="loai-tin.php?type=<?php echo $key['id_type']; ?>"><?php echo $key['typename']; ?>
+                  <li><a href="category-details.php?type=<?php echo $key['id_type']; ?>"><?php echo $key['typename']; ?>
                   <?php
                     // count number blog of type
                     $num = "SELECT count(id_blog) as total FROM blog WHERE id_type = '". $key['id_type'] ."'";
@@ -42,10 +42,10 @@
                 <?php foreach ($arr2 as $key) { ?>
                 <div class="post-right">
                   <div class="image-post-right">
-                      <a href="chi-tiet.php?id=<?php echo $key['id_blog'];  ?>"><img src="admin/pages/public/images/blogs/<?php echo $key['image']; ?>" alt="<?php echo $key['image']; ?>" title="<?php echo $key['title']; ?>" width="80"/></a>
+                      <a href="details.php?id=<?php echo $key['id_blog'];  ?>"><img src="admin/pages/public/images/blogs/<?php echo $key['image']; ?>" alt="<?php echo $key['image']; ?>" title="<?php echo $key['title']; ?>" width="80"/></a>
                   </div>
                   <div class="detail-post-right">
-                    <h2 align="justify"><a href="chi-tiet.php?id=<?php echo $key['id_blog'];  ?>">
+                    <h2 align="justify"><a href="details.php?id=<?php echo $key['id_blog'];  ?>">
                     <?php
                         if(strlen($key['title']) > 50)
                           echo mb_substr($key['title'], 0, 50, 'UTF-8')."...";
@@ -66,7 +66,7 @@
                 <div class="post-right">
                   <div class="number-post"><?php echo $stt; ?></div>
                   <div class="detail-post-right">
-                    <h2 align="justify"><a href="chi-tiet.php?id=<?php echo $key['id_blog'];  ?>">
+                    <h2 align="justify"><a href="details.php?id=<?php echo $key['id_blog'];  ?>">
                     <?php
                         if(strlen($key['title']) > 80){
                           echo mb_substr($key['title'], 0, 80, 'UTF-8')."...";

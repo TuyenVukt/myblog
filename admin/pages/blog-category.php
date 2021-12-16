@@ -41,7 +41,7 @@
                 $ins = "INSERT INTO type_blog(typename, slug_type, date_create) VALUES('$name_type', '$slug', '$date_create')";
                 mysqli_query($conn, $ins);
                 echo "<script>alert('Tạo loại bài viết thành công');</script>";
-                echo "<script>location.href='loai-blog.php';</script>";
+                echo "<script>location.href='blog-category.php';</script>";
             }
             else
             {
@@ -202,8 +202,8 @@
                                                 if($level == 1)
                                                 {
                                             ?>
-                                                    <td><a href="e-loai-blog.php?id=<?php echo $row_typeb['id_type']; ?>" class="btn btn-info"><i class="fas fa-pen-nib"></i></a></td>
-                                                    <td><a href="loai-blog.php?id=<?php echo $row_typeb['id_type']; ?>" onclick="return confirm('Dữ liệu này sẽ được xóa vĩnh viễn. Đồng ý?');" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
+                                                    <td><a href="edit-blog-category.php.php?id=<?php echo $row_typeb['id_type']; ?>" class="btn btn-info"><i class="fas fa-pen-nib"></i></a></td>
+                                                    <td><a href="blog-category.php?id=<?php echo $row_typeb['id_type']; ?>" onclick="return confirm('Dữ liệu này sẽ được xóa vĩnh viễn. Đồng ý?');" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
                                             <?php
                                                 }
                                                 else
@@ -237,6 +237,6 @@
     }
     else
     {
-        echo "<script> location.href='dang-nhap.php'; </script>";
+        echo "<script> location.href='login.php'; </script>";
     }
 ?>

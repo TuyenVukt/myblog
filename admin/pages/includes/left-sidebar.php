@@ -34,7 +34,7 @@
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="loai-blog.php">Thể loại bài viết </a>
+                                            <a class="nav-link" href="blog-category.php">Thể loại bài viết </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="upload-blog.php">Đăng bài mới</a>
@@ -53,16 +53,16 @@
                                 <div id="submenu-6" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="thong-tin-tai-khoan.php">Thông tin tài khoản</a>
+                                            <a class="nav-link" href="account-info.php ">Thông tin tài khoản</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="tai-khoan.php">Danh sách tài khoản</a>
+                                            <a class="nav-link" href="account.php">Danh sách tài khoản</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="doi-mat-khau.php">Đổi mật khẩu</a>
+                                            <a class="nav-link" href="change-password.php">Đổi mật khẩu</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="dang-xuat.php">Đăng xuất</a>
+                                            <a class="nav-link" href="logout.php">Đăng xuất</a>
                                         </li>
                                     </ul>
                                 </div>

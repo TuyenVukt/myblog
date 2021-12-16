@@ -154,7 +154,7 @@
                                                     }
                                                 ?>
                                                     </td>
-                                                    <td><a href="e-upload-blog.php?id=<?php echo $row_blog['id_blog']; ?>" class="btn btn-info"><i class="fas fa-pen-nib"></i></a></td>
+                                                    <td><a href="edit-upload-blog.php?id=<?php echo $row_blog['id_blog']; ?>" class="btn btn-info"><i class="fas fa-pen-nib"></i></a></td>
                                                     <td><a href="blog.php?id=<?php echo $row_blog['id_blog']; ?>" onclick="return confirm('Dữ liệu này sẽ được xóa vĩnh viễn. Đồng ý?');" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
                                                 </tr>
                         <?php
@@ -207,7 +207,7 @@
                                                     }
                                                     else
                                                     {
-                                                        echo "<td><a href='e-upload-blog.php?id=".$row_blog2['id_blog']."' class='btn btn-info'><i class='fas fa-pen-nib'></i></a></td>";
+                                                        echo "<td><a href='edit-upload-blog.php?id=".$row_blog2['id_blog']."' class='btn btn-info'><i class='fas fa-pen-nib'></i></a></td>";
                                                         echo "<td><a href='blog.php?id=".$row_blog2['id_blog']."' onclick='return confirm('Dữ liệu này sẽ được xóa vĩnh viễn. Đồng ý?');' class='btn btn-danger'><i class='fas fa-trash-alt'></i></a></td>";
                                                     }
                                                 ?>
@@ -234,6 +234,6 @@
     }
     else
     {
-        echo "<script> location.href='dang-nhap.php'; </script>";
+        echo "<script> location.href='login.php'; </script>";
     }
 ?>

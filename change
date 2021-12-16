@@ -1,0 +1,24 @@
+dang-nhap.php->login.php
+dangxuat.php->logout.php
+doi-mat-kau.php->change-password.php
+e-loai-blog.php->edit-blog-category.php
+e-upload-blog->edit-upload-blog.php 
+loai-blog.php->blog-category.php 
+tai-khoan.php->account.php 
+them-tai-khoan.php-> insert-account.php 
+thong-tin-tai-khoan.php->account-info.php 
+chi-tiet.php -> details.php 
+loai-tin.php -> category-details.php
+
+or create a new repository on the command line
+echo "# ProjectWeb" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/TuyenVukt/ProjectWeb.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin https://github.com/TuyenVukt/ProjectWeb.git
+git branch -M main
+git push -u origin main

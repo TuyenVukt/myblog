@@ -58,7 +58,7 @@
                         $update = "UPDATE account SET name = '$name', phone = '$phone', address = '$address', image = '$name_code' WHERE email = '$email_id'";
                         mysqli_query($conn, $update);
                         echo "<script>alert('Lưu thành công');</script>";
-                        echo "<script>location.href='thong-tin-tai-khoan.php';</script>";
+                        echo "<script>location.href='account-info.php ';</script>";
                     }
                     else
                     {
@@ -73,7 +73,7 @@
                     $update = "UPDATE account SET name = '$name', phone = '$phone', address = '$address' WHERE email = '$email_id'";
                     mysqli_query($conn, $update);
                     echo "<script>alert('Lưu thành công');</script>";
-                    echo "<script>location.href='thong-tin-tai-khoan.php';</script>";
+                    echo "<script>location.href='account-info.php ';</script>";
                 }
                 else
                 {
@@ -103,7 +103,7 @@
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Trang chính</a></li>
-                                            <li class="breadcrumb-item"><a href="tai-khoan.php" class="breadcrumb-link">Tài khoản</a></li>
+                                            <li class="breadcrumb-item"><a href="account.php" class="breadcrumb-link">Tài khoản</a></li>
                                             <li class="breadcrumb-item active" aria-current="page">Thông tin tài khoản</li>
                                         </ol>
                                     </nav>
@@ -168,7 +168,7 @@
                                                     ?>" disabled>
                                                 </div>
                                                 <button type="submit" class="btn btn-primary" name="save">Lưu thay đổi</button>
-                                                <a class="btn btn-success" href="doi-mat-khau.php" role="button">Thay đổi mật khẩu <i class="fas fa-arrow-right"></i></a>
+                                                <a class="btn btn-success" href="change-password.php" role="button">Thay đổi mật khẩu <i class="fas fa-arrow-right"></i></a>
                                             </form>
                                         </div>
                                     </div>
@@ -185,6 +185,6 @@
     }
     else
     {
-        echo "<script> location.href='dang-nhap.php'; </script>";
+        echo "<script> location.href='login.php'; </script>";
     }
 ?>

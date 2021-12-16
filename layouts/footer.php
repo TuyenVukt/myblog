@@ -4,22 +4,22 @@
             <div class="row">
               <div class="col-md-4">
                 <h2>About me</h2>
-                <p>Website cá nhân</p>
+                <p>Blog website</p>
               </div>
               <div class="col-md-4">
                 <h2>Tags</h2>
                 <ul class="menu-footer">
                   <?php foreach ($arr4 as $key) { ?>
-                  <li><a href="loai-tin.php?type=<?php echo $key['id_type']; ?>"><?php echo $key['typename']; ?></a></li>
+                  <li><a href="category-details.php?type=<?php echo $key['id_type']; ?>"><?php echo $key['typename']; ?></a></li>
                   <?php } ?>
                 </ul>
               </div>
               <div class="col-md-4">
                 <h2>Contact</h2>
                 <ul class="menu-footer">
-                  <li><a href="https://www.facebook.com/bui.congquynh" target="_blank">Nickname: 14thFeb</a></li>
-                  <li><a href="mailto:qbc14thfebruary@gmail.com">Email: qbc14thfebruary@gmail.com</a></li>
-                  <li><a href="callme:0345604696">Số điện thoại: 0345604696</a></li>
+                  <li><a href="#" target="_blank">Nickname: 5AESN</a></li>
+                  <li><a href="mailto:#">Email: namanhemsieunhan@gmail.com</a></li>
+                  <li><a href="callme:0123456789">Số điện thoại: 0123456789</a></li>
                 </ul>
               </div>
             </div>
@@ -27,7 +27,7 @@
         </div>
         <!-- footer body -->
         <div class="footer-bottom">
-          <h2>Design by <a href="https://www.facebook.com/bui.congquynh" target="_blank">Bùi Công Quỳnh</a></h2>
+          <h2>Design by <a href="#" target="_blank">Năm anh em siêu nhân</a></h2>
         </div>
         <!-- footer bottom -->
       </footer>

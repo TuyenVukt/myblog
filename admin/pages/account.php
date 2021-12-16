@@ -52,7 +52,7 @@
                             $update = "UPDATE account SET password = '$password_new' WHERE email = '$username'";
                             mysqli_query($conn, $update);
                             echo "<script>alert('Đổi mật khẩu thành công');</script>";
-                            echo "<script>location.href='doi-mat-khau.php';</script>";
+                            echo "<script>location.href='change-password.php';</script>";
                         }
                     }
                 }
@@ -84,7 +84,7 @@
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Trang chính</a></li>
-                                            <li class="breadcrumb-item"><a href="tai-khoan.php" class="breadcrumb-link">Tài khoản</a></li>
+                                            <li class="breadcrumb-item"><a href="account.php" class="breadcrumb-link">Tài khoản</a></li>
                                             <li class="breadcrumb-item active" aria-current="page">Thông tin tài khoản</li>
                                         </ol>
                                     </nav>
@@ -104,7 +104,7 @@
 
                                         if($level_session == 1)
                                         {
-                                            echo "<a href='them-tai-khoan.php' class='btn btn-outline-primary'><i class='fas fa-plus'></i> tài khoản</a>";
+                                            echo "<a href='insert-account.php ' class='btn btn-outline-primary'><i class='fas fa-plus'></i> tài khoản</a>";
                                         }
                                         else
                                         {
@@ -195,6 +195,6 @@
     }
     else
     {
-        echo "<script> location.href='dang-nhap.php'; </script>";
+        echo "<script> location.href='login.php'; </script>";
     }
 ?>

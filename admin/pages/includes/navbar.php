@@ -82,9 +82,9 @@
                                     <h5 class="mb-0 text-white nav-user-name" style="font-family: 'Roboto Condensed', sans-serif;"><?php echo $name; ?></h5>
                                     <span class="status"></span><span class="ml-2">Online</span>
                                 </div>
-                                <a class="dropdown-item" href="thong-tin-tai-khoan.php"><i class="fas fa-user mr-2"></i>Thông tin cá nhân</a>
-                                <a class="dropdown-item" href="doi-mat-khau.php"><i class="fas fa-cog mr-2"></i>Đổi mật khẩu</a>
-                                <a class="dropdown-item" href="dang-xuat.php"><i class="fas fa-power-off mr-2"></i>Đăng xuất</a>
+                                <a class="dropdown-item" href="account-info.php "><i class="fas fa-user mr-2"></i>Thông tin cá nhân</a>
+                                <a class="dropdown-item" href="change-password.php"><i class="fas fa-cog mr-2"></i>Đổi mật khẩu</a>
+                                <a class="dropdown-item" href="logout.php"><i class="fas fa-power-off mr-2"></i>Đăng xuất</a>
                             </div>
                         </li>
                     </ul>

@@ -68,7 +68,7 @@ while ($row2 = mysqli_fetch_array($result2)) {
               <div class="owl-relation owl-carousel owl-theme">
                 <?php foreach ($arr2 as $key) : ?>
                   <div class="item">
-                    <a href="./chi-tiet.php?id= <?php echo $key['id_blog']; ?>"><img src="admin/pages/public/images/blogs/<?php echo $key['image']; ?>" alt="<?php echo $key['image']; ?>" title="<?php echo $key['title']; ?>" class="w-100" /></a>
+                    <a href="./details.php?id= <?php echo $key['id_blog']; ?>"><img src="admin/pages/public/images/blogs/<?php echo $key['image']; ?>" alt="<?php echo $key['image']; ?>" title="<?php echo $key['title']; ?>" class="w-100" /></a>
                     <h2 align="justify"><a href="#">
                         <?php
                         if (strlen($key['title']) > 50)
@@ -94,7 +94,7 @@ while ($row2 = mysqli_fetch_array($result2)) {
           <!-- relation article -->
           <div class="comment-section">
             <h2>Bình luận bài viết</h2>
-            <div class="fb-comments" data-href="http://localhost/myblog/chi-tiet.php?id=<?php echo $id_tin ?>" data-width="100%" data-numposts="5"></div>
+            <div class="fb-comments" data-href="http://localhost/myblog/details.php?id=<?php echo $id_tin ?>" data-width="100%" data-numposts="5"></div>
           </div>
           <!-- comment section -->
         </div>

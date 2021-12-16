@@ -233,6 +233,6 @@ if (isset($_SESSION['user']) && isset($_SESSION['level'])) {
         // footer
         include('includes/footer.php');
     } else {
-        echo "<script> location.href='dang-nhap.php'; </script>";
+        echo "<script> location.href='login.php'; </script>";
     }
         ?>

@@ -73,10 +73,10 @@
                         <?php foreach ($arrItem as $key) { ?>
                         <div class="row section-article">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 section-image-article">
-                                <a href="chi-tiet.php?id=<?php echo $key['id_blog']; ?>"><img src="admin/pages/public/images/blogs/<?php echo $key['image']; ?>" alt="<?php echo $key['image']; ?>" title="<?php echo $key['title']; ?>" class="w-100"/></a>
+                                <a href="details.php?id=<?php echo $key['id_blog']; ?>"><img src="admin/pages/public/images/blogs/<?php echo $key['image']; ?>" alt="<?php echo $key['image']; ?>" title="<?php echo $key['title']; ?>" class="w-100"/></a>
                             </div>
                             <div class="col-lg-8 col-md-8 col-sm-4 col-xs-12 detail-article">
-                                <h2><a href="chi-tiet.php?id=<?php echo $key['id_blog']; ?>">
+                                <h2><a href="details.php?id=<?php echo $key['id_blog']; ?>">
                                   <?php
                                       if(strlen($key['title']) > 80)
                                         echo mb_substr($key['title'], 0, 80, 'UTF-8')."...";
@@ -102,8 +102,8 @@
                                 <?php
                                   // nếu current_page > 1 và total_page > 1 mới hiển thị nút prev
                                   if ($current_page > 1 && $total_page > 1){
-                                    echo '<li class="page-item"><a class="page-link" href="loai-tin.php?type='.$id_type.'"><i class="fas fa-angle-double-left"></i></a></li>';
-                                    echo '<li class="page-item"><a class="page-link" href="loai-tin.php?type='.$id_type.'&page='.($current_page - 1).'"><i class="fas fa-angle-left"></i></a></li>';
+                                    echo '<li class="page-item"><a class="page-link" href="category-details.php?type='.$id_type.'"><i class="fas fa-angle-double-left"></i></a></li>';
+                                    echo '<li class="page-item"><a class="page-link" href="category-details.php?type='.$id_type.'&page='.($current_page - 1).'"><i class="fas fa-angle-left"></i></a></li>';
                                   }
 
                                   // Lặp khoảng giữa
@@ -114,14 +114,14 @@
                                           echo '<li class="page-item active" aria-current="page"><span class="page-link">'.$i.'</span></li>';
                                       }
                                       else{
-                                          echo '<li class="page-item"><a class="page-link" href="loai-tin.php?type='.$id_type.'&page='.$i.'">'.$i.'</a></li>';
+                                          echo '<li class="page-item"><a class="page-link" href="category-details.php?type='.$id_type.'&page='.$i.'">'.$i.'</a></li>';
                                       }
                                   }
 
                                   // nếu current_page < $total_page và total_page > 1 mới hiển thị nút prev
                                   if ($current_page < $total_page && $total_page > 1){
-                                      echo '<li class="page-item"><a class="page-link" href="loai-tin.php?type='.$id_type.'&page='.($current_page + 1).'"><i class="fas fa-angle-right"></i></a></li>';
-                                      echo '<li class="page-item"><a class="page-link" href="loai-tin.php?type='.$id_type.'&page='.$total_page.'"><i class="fas fa-angle-double-right"></i></a></li>';
+                                      echo '<li class="page-item"><a class="page-link" href="category-details.php?type='.$id_type.'&page='.($current_page + 1).'"><i class="fas fa-angle-right"></i></a></li>';
+                                      echo '<li class="page-item"><a class="page-link" href="category-details.php?type='.$id_type.'&page='.$total_page.'"><i class="fas fa-angle-double-right"></i></a></li>';
                                   }
 
                                 ?>
