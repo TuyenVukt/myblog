@@ -64,12 +64,14 @@
                 </nav>
             </div>
         </div>
+        
         <!-- section breabcrum -->
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                     <div class="type-section">
                         <h2><?php echo $row2['typename']; ?></h2>
+
                         <?php foreach ($arrItem as $key) { ?>
                         <div class="row section-article">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 section-image-article">
@@ -96,6 +98,7 @@
                         </div>
                         <!-- section article -->
                         <?php } ?>
+                        
                         <div class="pagination-section">
                             <nav aria-label="...">
                                 <ul class="pagination">

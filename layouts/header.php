@@ -84,7 +84,7 @@ while ($row4 = mysqli_fetch_array($result4)) {
                       <a class="nav-link" href="http://localhost/myblog/">TRANG CHỦ<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="http://localhost/myblog/admin/pages/gioithieu/index.htm">GIỚI THIỆU</a>
+                      <a class="nav-link" href="#">GIỚI THIỆU</a>
                     </li>
                     <!--<li class="nav-item">
                         <a class="nav-link" href="https://www.facebook.com/bui.congquynh" target="_blank">FACEBOOK</a>

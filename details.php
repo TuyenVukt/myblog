@@ -25,6 +25,7 @@ while ($row2 = mysqli_fetch_array($result2)) {
   $arr2[] = $row2;
 }
 
+
 ?>
 <!-- header -->
 
@@ -60,6 +61,19 @@ while ($row2 = mysqli_fetch_array($result2)) {
             <div class="content-article">
               <?php echo $row['content']; ?>
             </div>
+            <div id="fb-root"></div>
+            <script>
+              $(document).ready(function() {
+                (function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s);
+                  js.id = id;
+                  js.src = "http://localhost/myblog/details.php";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+              });
+            </script>
           </div>
           <!-- content arctile -->
           <div class="relation-article">
@@ -92,10 +106,6 @@ while ($row2 = mysqli_fetch_array($result2)) {
             <!-- relation-box -->
           </div>
           <!-- relation article -->
-          <div class="comment-section">
-            <h2>Bình luận bài viết</h2>
-            <div class="fb-comments" data-href="http://localhost/myblog/details.php?id=<?php echo $id_tin ?>" data-width="100%" data-numposts="5"></div>
-          </div>
           <!-- comment section -->
         </div>
         <!-- detail section -->
@@ -106,7 +116,6 @@ while ($row2 = mysqli_fetch_array($result2)) {
     </div>
   </div>
 </content>
-
 <!-- content -->
 <?php
 // include layouts

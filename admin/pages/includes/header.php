@@ -25,7 +25,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-
+    <link rel="stylesheet" href="../css/admin.css">
 </head>
 <style type="text/css">
     body
@@ -33,3 +33,4 @@
         font-family: 'Roboto Condensed', sans-serif;
     }
 </style>
+

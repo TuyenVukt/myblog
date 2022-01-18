@@ -1,70 +1,69 @@
 <?php
 
-    // open session
-    session_start();
+// open session
+session_start();
 
-    if(isset($_SESSION['user']) && isset($_SESSION['level']))
-    {
-        $level = $_SESSION['level'];
-        $users = $_SESSION['user'];
+if (isset($_SESSION['user']) && isset($_SESSION['level'])) {
+    $level = $_SESSION['level'];
+    $users = $_SESSION['user'];
 
-        // include
-        include('includes/header.php');
-        include('includes/navbar.php');
-        include('includes/left-sidebar.php');
+    // include
+    include('includes/header.php');
+    include('includes/navbar.php');
+    include('includes/left-sidebar.php');
 
-        // include function
-        require('modules/functions.php');
+    // include function
+    require('modules/functions.php');
 
-        // get date from session
-        $session = "SELECT * FROM account WHERE email = '".$users."'";
-        $rs_session = mysqli_query($conn, $session);
-        $row_session = mysqli_fetch_array($rs_session);
-        $id_acc = $row_session['id_acc'];
-        $name_user = $row_session['name'];
+    // get date from session
+    $session = "SELECT * FROM account WHERE email = '" . $users . "'";
+    $rs_session = mysqli_query($conn, $session);
+    $row_session = mysqli_fetch_array($rs_session);
+    $id_acc = $row_session['id_acc'];
+    $name_user = $row_session['name'];
 
-        // delete
-        if(isset($_GET['id']))
-        {
-            $target_dir = "public/images/blogs/";
-            $id = $_GET['id'];
-            $sql = "SELECT image, title FROM blog WHERE id_blog = $id";
-            $result = mysqli_query($conn, $sql);
-            $row = mysqli_fetch_array($result);
-            $delname = $row['title'];
+    // delete
+    if (isset($_GET['id'])) {
+        $target_dir = "public/images/blogs/";
+        $id = $_GET['id'];
+        $sql = "SELECT image, title FROM blog WHERE id_blog = $id";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_array($result);
+        $delname = $row['title'];
 
-            $old_image = $row['image'];
-            $target_file = $target_dir.$old_image;
-            if($old_image != "no-image.jpg")
-            {
-                unlink($target_file);
-            }
-
-            // insert to history
-            $text = " đã xóa bài viết: <b>". $delname . "</b>";
-            $time = date('Y-m-d H:i:s');
-            $ins_his = "INSERT INTO history(text, time, id_acc, flag) VALUES('$text','$time', '$id_acc', 0)";
-            mysqli_query($conn, $ins_his);
-
-            $del = "DELETE FROM blog WHERE id_blog = $id";
-            mysqli_query($conn, $del);
-            echo "<script>alert('Xóa bài viết thành công');</script>";
-            echo "<script>location.href='blog.php';</script>";
+        $old_image = $row['image'];
+        $target_file = $target_dir . $old_image;
+        if ($old_image != "no-image.jpg") {
+            unlink($target_file);
         }
+
+        // insert to history
+        $text = " đã xóa bài viết: <b>" . $delname . "</b>";
+        $time = date('Y-m-d H:i:s');
+        $ins_his = "INSERT INTO history(text, time, id_acc, flag) VALUES('$text','$time', '$id_acc', 0)";
+        mysqli_query($conn, $ins_his);
+
+        $del = "DELETE FROM blog WHERE id_blog = $id";
+        mysqli_query($conn, $del);
+        echo "<script>alert('Xóa bài viết thành công');</script>";
+        echo "<script>location.href='blog.php';</script>";
+    }
+
 ?>
-<body>
+
+    <body>
         <!-- ============================================================== -->
         <!-- wrapper  -->
         <!-- ============================================================== -->
         <div class="dashboard-wrapper">
             <div class="dashboard-ecommerce">
-                <div class="container-fluid dashboard-content " >
+                <div class="container-fluid dashboard-content ">
                     <!-- ============================================================== -->
                     <!-- pageheader  -->
                     <!-- ============================================================== -->
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="page-header" >
+                            <div class="page-header">
                                 <h2 class="pageheader-title" style="font-family: 'Roboto Condensed', sans-serif;">Danh sách Blog</h2>
                                 <!--
                                 <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
@@ -87,11 +86,43 @@
                     <div class="ecommerce-widget">
                         <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12">
                             <div class="card">
-                                <h5 class="card-header" style="font-family: 'Roboto Condensed', sans-serif;">Danh sách bài viết
-                                    <div class="btn_function float-right">
-                                        <a href='upload-blog.php' class='btn btn-outline-primary'><i class='fas fa-plus'></i> Bài viết</a>
+                                <h2 class="card-header" style="font-family: 'Roboto Condensed', sans-serif;">Danh sách bài viết
+                                </h2>
+                                <div class="cont-blog">
+                                    <div class="cont-input-left">
+                                        <form action="blog.php">
+                                            <input type="text" name="blog-key" class="input-search" placeholder="Blog Name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                            <!-- 
+                                            <select class="select-search" aria-label="Default select example">
+                                                <option selected>Loại bài viết</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                            <select class="select-search" aria-label="Default select example">
+                                                <option selected value="0">Thời gian</option>
+                                                <option value="1">Mới Nhất</option>
+                                                <option value="2">Cũ nhất</option>
+
+                                            </select>
+                                            <select class="select-search" aria-label="Default select example">
+                                                <option selected value="0">Duyệt</option>
+                                                <option value="1">Đã duyệt</option>
+                                                <option value="2">Chưa duyệt</option>
+
+                                            </select> -->
+                                            <button class="btn btn-outline-secondary" type="submit">Tìm kiếm</button>
+                                        </form>
+
                                     </div>
-                                </h5>
+                                    <div class="cont-input-right">
+                                        <a class="btn btn-primary" href="blog.php?show_all=true" role="button">Show All</a>
+                                        <div class="btn_function ">
+                                            <a href='upload-blog.php' class='btn btn-outline-primary'><i class='fas fa-plus'></i> Bài viết</a>
+                                        </div>
+                                    </div>
+
+                                </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
 
@@ -101,7 +132,7 @@
                                                     <th class="border-0" style="font-family: 'Roboto Condensed', sans-serif;">STT</th>
                                                     <th class="border-0" style="font-family: 'Roboto Condensed', sans-serif;">Ảnh</th>
                                                     <th class="border-0" style="font-family: 'Roboto Condensed', sans-serif;">Tiêu đề</th>
-                                                     <th class="border-0" style="font-family: 'Roboto Condensed', sans-serif;">Slug</th>
+                                                    <th class="border-0" style="font-family: 'Roboto Condensed', sans-serif;">Slug</th>
                                                     <th class="border-0" style="font-family: 'Roboto Condensed', sans-serif;">Loại</th>
                                                     <th class="border-0" style="font-family: 'Roboto Condensed', sans-serif;">Ngày đăng</th>
                                                     <th class="border-0" style="font-family: 'Roboto Condensed', sans-serif;">Duyệt</th>
@@ -110,130 +141,181 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                        <?php
-
-                            // check session
-                            if($level == 1)
-                            {
-                                $blog = "SELECT id_blog, image, title, date_upload, b.slug as slug, typename, flag FROM blog b, type_blog tb WHERE b.id_type = tb.id_type ORDER BY date_upload DESC";
-                                $rs_blog = mysqli_query($conn, $blog);
-                                $count = 0;
-                                while ($row_blog = mysqli_fetch_array($rs_blog))
-                                {
-                                    $count++;
-                        ?>
-                                                <tr>
-                                                    <td><?php echo $count; ?></td>
-                                                    <td>
-                                                        <div class="m-r-10"><img src="public/images/blogs/<?php echo $row_blog['image']; ?>" alt="<?php echo $row_blog['image']; ?>" class="rounded" width="60"></div>
-                                                    </td>
-                                                    <td><?php echo $row_blog['title']; ?></td>
-                                                    <td><?php echo $row_blog['slug']; ?></td>
-                                                    <td width="10%"><?php echo $row_blog['typename']; ?></td>
-                                                    <td width="10%">
-                                                    <?php
-                                                        $date = date_create($row_blog['date_upload']);
-                                                        echo date_format($date, "d-m-Y H:i:s");
-                                                    ?>
-                                                    </td>
-                                                    <td>
                                                 <?php
 
-                                                    if($row_blog['flag'] == 1)
-                                                    {
-                                                        echo "<a href='modules/flags.php?id=".$row_blog['id_blog']."&tbl=blog' class='btn btn-light'>
+                                                // check session
+                                                if ($level == 1) {
+                                                    // search
+                                                    $blog_key = isset($_GET['blog-key']) ? $_GET['blog-key'] : '';
+                                                    //tinh total
+                                                    $all_blog = "SELECT id_blog, image, title, date_upload, b.slug as slug, typename, flag FROM blog b, type_blog tb WHERE b.id_type = tb.id_type AND title like '%" . $blog_key . "%' ORDER BY date_upload DESC";
+                                                    $num_blog = mysqli_query($conn, $all_blog);
+                                                    $total = mysqli_num_rows($num_blog);
+                                                    //thiet lap so ban ghi trong 1 trang
+                                                    $limit = 5;
+                                                    //tinh so trang
+                                                    $page = ceil($total / $limit);
+                                                    //tinh start
+                                                    $cr_page = (isset($_GET['page']) ? $_GET['page'] : 1);
+                                                    $start = ($cr_page - 1) * $limit;
+
+                                                    $show_all = isset($_GET['show_all']);
+
+                                                    if (isset($_GET['blog-key']))   $blog_key = $_GET['blog-key'];
+
+                                                    if (isset($_GET['blog-key'])) {
+                                                        print("$blog_key");
+                                                        $blog = "SELECT id_blog, image, title, date_upload, b.slug as slug, typename, flag FROM blog b, type_blog tb WHERE b.id_type = tb.id_type AND title like '%" . $blog_key . "%' ORDER BY date_upload DESC LIMIT $start, $limit";
+                                                    } else {
+                                                        $blog = "SELECT id_blog, image, title, date_upload, b.slug as slug, typename, flag FROM blog b, type_blog tb WHERE b.id_type = tb.id_type ORDER BY date_upload DESC LIMIT $start, $limit";
+                                                    }
+                                                    if ($show_all == false) {
+                                                        if (isset($_GET['blog-key'])) {
+                                                            print("$blog_key");
+                                                            $blog = "SELECT id_blog, image, title, date_upload, b.slug as slug, typename, flag FROM blog b, type_blog tb WHERE b.id_type = tb.id_type AND title like '%" . $blog_key . "%' ORDER BY date_upload DESC LIMIT $start, $limit";
+                                                        } else {
+                                                            $blog = "SELECT id_blog, image, title, date_upload, b.slug as slug, typename, flag FROM blog b, type_blog tb WHERE b.id_type = tb.id_type ORDER BY date_upload DESC LIMIT $start, $limit";
+                                                        }
+                                                        $rs_blog = mysqli_query($conn, $blog);
+                                                    } else {
+                                                        $rs_blog = $num_blog;
+                                                    }
+
+
+                                                    // var_dump($total, $start, $limit, $cr_page);
+                                                    $count = 0;
+                                                    while ($row_blog = mysqli_fetch_array($rs_blog)) {
+                                                        $count++;
+                                                ?>
+                                                        <tr>
+                                                            <td><?php echo $count; ?></td>
+                                                            <td>
+                                                                <div class="m-r-10"><img src="public/images/blogs/<?php echo $row_blog['image']; ?>" alt="<?php echo $row_blog['image']; ?>" class="rounded" width="60"></div>
+                                                            </td>
+                                                            <td><?php echo $row_blog['title']; ?></td>
+                                                            <td><?php echo $row_blog['slug']; ?></td>
+                                                            <td width="10%"><?php echo $row_blog['typename']; ?></td>
+                                                            <td width="10%">
+                                                                <?php
+                                                                $date = date_create($row_blog['date_upload']);
+                                                                echo date_format($date, "d-m-Y H:i:s");
+                                                                ?>
+                                                            </td>
+                                                            <td>
+                                                                <?php
+
+                                                                if ($row_blog['flag'] == 1) {
+                                                                    echo "<a href='modules/flags.php?id=" . $row_blog['id_blog'] . "&tbl=blog' class='btn btn-light'>
                                                                 <i class='fas fa-times'></i>
                                                             </a>";
-                                                    }
-                                                    else
-                                                    {
-                                                        echo "<a href='modules/flags.php?id=".$row_blog['id_blog']."&tbl=blog' class='btn btn-success'>
+                                                                } else {
+                                                                    echo "<a href='modules/flags.php?id=" . $row_blog['id_blog'] . "&tbl=blog' class='btn btn-success'>
                                                                 <i class='fas fa-check'></i>
                                                             </a>";
-
-                                                    }
-                                                ?>
-                                                    </td>
-                                                    <td><a href="edit-upload-blog.php?id=<?php echo $row_blog['id_blog']; ?>" class="btn btn-info"><i class="fas fa-pen-nib"></i></a></td>
-                                                    <td><a href="blog.php?id=<?php echo $row_blog['id_blog']; ?>" onclick="return confirm('Dữ liệu này sẽ được xóa vĩnh viễn. Đồng ý?');" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
-                                                </tr>
-                        <?php
-                                }
-                                // end while
-                            }
-                            else
-                            {
-                                $blog2 = "SELECT id_blog, b.image as image, title, date_upload, b.slug as slug, typename, flag FROM blog b, type_blog tb, account a WHERE b.id_type = tb.id_type AND a.id_acc = b.author AND email = '$users' ORDER BY date_upload DESC";
-                                $rs_blog2 = mysqli_query($conn, $blog2);
-                                $count = 0;
-                                while ($row_blog2 = mysqli_fetch_array($rs_blog2))
-                                {
-                                    $count++;
-
-                        ?>
-                                                <tr>
-                                                    <td><?php echo $count; ?></td>
-                                                    <td>
-                                                        <div class="m-r-10"><img src="public/images/blogs/<?php echo $row_blog2['image']; ?>" alt="<?php echo $row_blog2['image']; ?>" class="rounded" width="60"></div>
-                                                    </td>
-                                                    <td><?php echo $row_blog2['title']; ?></td>
-                                                    <td><?php echo $row_blog2['slug']; ?></td>
-                                                    <td width="10%"><?php echo $row_blog2['typename']; ?></td>
-                                                    <td width="10%">
+                                                                }
+                                                                ?>
+                                                            </td>
+                                                            <td><a href="edit-upload-blog.php?id=<?php echo $row_blog['id_blog']; ?>" class="btn btn-info"><i class="fas fa-pen-nib"></i></a></td>
+                                                            <td><a href="blog.php?id=<?php echo $row_blog['id_blog']; ?>" onclick="return confirm('Dữ liệu này sẽ được xóa vĩnh viễn. Đồng ý?');" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
+                                                        </tr>
                                                     <?php
-                                                        $date = date_create($row_blog2['date_upload']);
-                                                        echo date_format($date, "d-m-Y H:i:s");
-                                                    ?>
-                                                    </td>
-                                                    <td>
-                                                <?php
-                                                    if($row_blog2['flag'] == 1)
-                                                    {
-                                                        echo "<button type='button' class='btn btn-light' disabled><i class='fas fa-times'></i></button>";
                                                     }
-                                                    else
-                                                    {
-                                                        echo "<button type='button' class='btn btn-success' disabled><i class='fas fa-check'></i></button>";
-                                                    }
-                                                ?>
-                                                    </td>
-                                                <?php
+                                                    // end while
+                                                } else {
+                                                    $blog2 = "SELECT id_blog, b.image as image, title, date_upload, b.slug as slug, typename, flag FROM blog b, type_blog tb, account a WHERE b.id_type = tb.id_type AND a.id_acc = b.author AND email = '$users' ORDER BY date_upload DESC";
+                                                    $rs_blog2 = mysqli_query($conn, $blog2);
+                                                    $count = 0;
+                                                    while ($row_blog2 = mysqli_fetch_array($rs_blog2)) {
+                                                        $count++;
 
-                                                    if($row_blog2['flag'] == 1)
-                                                    {
-                                                        // da duyet ko duoc sua xoa
-                                                        echo "<td><button type='button' class='btn btn-info' disabled><i class='fas fa-pen-nib'></i></button></td>";
-                                                        echo "<td><button type='button' class='btn btn-danger' disabled><i class='fas fa-trash-alt'></i></button></td>";
+                                                    ?>
+                                                        <tr>
+                                                            <td><?php echo $count; ?></td>
+                                                            <td>
+                                                                <div class="m-r-10"><img src="public/images/blogs/<?php echo $row_blog2['image']; ?>" alt="<?php echo $row_blog2['image']; ?>" class="rounded" width="60"></div>
+                                                            </td>
+                                                            <td><?php echo $row_blog2['title']; ?></td>
+                                                            <td><?php echo $row_blog2['slug']; ?></td>
+                                                            <td width="10%"><?php echo $row_blog2['typename']; ?></td>
+                                                            <td width="10%">
+                                                                <?php
+                                                                $date = date_create($row_blog2['date_upload']);
+                                                                echo date_format($date, "d-m-Y H:i:s");
+                                                                ?>
+                                                            </td>
+                                                            <td>
+                                                                <?php
+                                                                if ($row_blog2['flag'] == 1) {
+                                                                    echo "<button type='button' class='btn btn-light' disabled><i class='fas fa-times'></i></button>";
+                                                                } else {
+                                                                    echo "<button type='button' class='btn btn-success' disabled><i class='fas fa-check'></i></button>";
+                                                                }
+                                                                ?>
+                                                            </td>
+                                                            <?php
+
+                                                            if ($row_blog2['flag'] == 1) {
+                                                                // da duyet ko duoc sua xoa
+                                                                echo "<td><button type='button' class='btn btn-info' disabled><i class='fas fa-pen-nib'></i></button></td>";
+                                                                echo "<td><button type='button' class='btn btn-danger' disabled><i class='fas fa-trash-alt'></i></button></td>";
+                                                            } else {
+                                                                echo "<td><a href='edit-upload-blog.php?id=" . $row_blog2['id_blog'] . "' class='btn btn-info'><i class='fas fa-pen-nib'></i></a></td>";
+                                                                echo "<td><a href='blog.php?id=" . $row_blog2['id_blog'] . "' onclick='return confirm('Dữ liệu này sẽ được xóa vĩnh viễn. Đồng ý?');' class='btn btn-danger'><i class='fas fa-trash-alt'></i></a></td>";
+                                                            }
+                                                            ?>
+                                                        </tr>
+                                                <?php
                                                     }
-                                                    else
-                                                    {
-                                                        echo "<td><a href='edit-upload-blog.php?id=".$row_blog2['id_blog']."' class='btn btn-info'><i class='fas fa-pen-nib'></i></a></td>";
-                                                        echo "<td><a href='blog.php?id=".$row_blog2['id_blog']."' onclick='return confirm('Dữ liệu này sẽ được xóa vĩnh viễn. Đồng ý?');' class='btn btn-danger'><i class='fas fa-trash-alt'></i></a></td>";
-                                                    }
+                                                    // end while 2
+                                                }
                                                 ?>
-                                                </tr>
-                        <?php
-                                }
-                                // end while 2
-                            }
-                        ?>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                             </div>
                             <!-- card -->
+                            <?php if ($show_all == false) { ?>
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                        <?php if ($cr_page - 1 > 0) { ?>
+                                            <li class="page-item">
+                                                <a class="page-link" href="blog.php?page=<?php echo $cr_page - 1 ?>" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                            </li>
+                                        <?php } ?>
+                                        <?php for ($i = 1; $i <= $page; $i++) { ?>
+                                            <li class="page-item <?php echo (($cr_page == $i) ? 'active' : '') ?> ">
+                                                <a class="page-link" href="blog.php?page=<?php echo $i ?><?php echo (($blog_key != '') ? "&blog-key=$blog_key" : '') ?>"><?php echo $i ?></a>
+                                            </li>
+
+                                        <?php } ?>
+                                        <?php if ($cr_page + 1 <= $page) { ?>
+                                            <li class="page-item">
+                                                <a class="page-link" href="blog.php?page=<?php echo $cr_page + 1 ?>" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </li>
+                                        <?php } ?>
+
+                                    </ul>
+                                </nav>
+                            <?php } ?>
                         </div>
                         <!-- col-lg-12 -->
                     </div>
                 </div>
             </div>
-<?php
+
+
+
+        <?php
         // footer
         include('includes/footer.php');
-    }
-    else
-    {
+    } else {
         echo "<script> location.href='login.php'; </script>";
     }
-?>
+        ?>

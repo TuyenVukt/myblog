@@ -1,0 +1,26 @@
+.cont-blog{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+  }
+.cont-input-left{
+  width: 60%;
+}
+.input-search{
+  padding: 6px 9px;
+
+}
+.cont-input-right{
+  display: flex;
+  justify-content: flex-end;
+}
+.select-search{
+  padding: 6px 9px;
+  border-width: 2px;
+    border-style: inset;
+    border-color: gray;
+    border-image: initial;
+}
+.cont-input-right >a{
+  margin-right: 10px;
+}
