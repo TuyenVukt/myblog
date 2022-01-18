@@ -202,7 +202,7 @@
                                                 if($level == 1)
                                                 {
                                             ?>
-                                                    <td><a href="edit-blog-category.php.php?id=<?php echo $row_typeb['id_type']; ?>" class="btn btn-info"><i class="fas fa-pen-nib"></i></a></td>
+                                                    <td><a href="edit-blog-category.php?id=<?php echo $row_typeb['id_type']; ?>" class="btn btn-info"><i class="fas fa-pen-nib"></i></a></td>
                                                     <td><a href="blog-category.php?id=<?php echo $row_typeb['id_type']; ?>" onclick="return confirm('Dữ liệu này sẽ được xóa vĩnh viễn. Đồng ý?');" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
                                             <?php
                                                 }

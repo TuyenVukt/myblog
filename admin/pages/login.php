@@ -2,7 +2,6 @@
 
     // open session
     session_start();
-
     if(isset($_SESSION['user']) && isset($_SESSION['level']))
     {
         echo "<script>location.href='index.php';</script>";
@@ -16,7 +15,7 @@
         if(isset($_POST['dangnhap']))
         {
             $email = $_POST['email'];
-            $password = $_POST['password'];
+            $password = md5($_POST['password']);
 
             if($email)
             {
@@ -27,22 +26,20 @@
                     $sql = "SELECT email, level FROM account WHERE email = '$email' AND password = '$password'";
                     $result = mysqli_query($conn, $sql);
                     $row = mysqli_fetch_array($result);
-                    $level = $row['level'];
+                    
                     if(mysqli_num_rows($result) == 1)
                     {
                         // create session
                         $_SESSION['user'] = $email;
-                        $_SESSION['level'] = $level;
+                        $_SESSION['level'] = $row['level'];
                         echo "<script>
                                     location.href='index.php'; 
                                     alert('Đăng nhập thành công.');
                             </script>";
-
-
                     }
                     else
                     {
-                        echo "<script>alert('Tài khoản không tồn tại!.');</script>";
+                        echo "<script>alert('Sai tài khoản hoặc mật khẩu , Vui lòng nhập lại.');</script>";
                     }
                 }
                 else
