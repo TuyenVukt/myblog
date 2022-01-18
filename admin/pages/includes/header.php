@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" href="./public/images/avatars/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TRANG QUẢN TRỊ | MYBLOG</title>
+    <title>TRANG QUẢN TRỊ | ITNEWS</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
     <link href="../assets/vendor/fonts/circular-std/style.css" rel="stylesheet">

@@ -15,10 +15,10 @@
 .navbar {
 	position: relative;
 }
-.nav-item-login {
+/* .nav-item-login {
 	position: absolute;
   right: 0;
-}
+} */
 /* Menu header */
 .menu-header {
   background: #65bba7;
@@ -370,5 +370,25 @@ textarea{
   height: 80px;
   background-color: #fff;
   resize: none;
+}
+
+.search-container input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+.search-container {
+  float: right;
+}
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
 }
 

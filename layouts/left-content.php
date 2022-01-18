@@ -91,7 +91,7 @@
                 <h2 class="title-right-box">Kênh liên lạc</h2>
                 <div class="post-right">
                   <div class="detail-post-right">
-                    <h2><a href="https://www.facebook.com/bui.congquynh" target="_blank">Facebook</a></h2>
+                    <h2><a href="https://www.facebook.com/profile.php?id=100028318446533" target="_blank">Facebook</a></h2>
                   </div>
                 </div>
                 <!-- post-right -->
@@ -103,7 +103,7 @@
                 <!-- post-right -->
                 <div class="post-right">
                   <div class="detail-post-right">
-                    <h2><a href="https://www.facebook.com/anhchangt0/" target="_blank">Fanpage</a></h2>
+                    <h2><a href="https://www.facebook.com/profile.php?id=100028318446533" target="_blank">Fanpage</a></h2>
                   </div>
                 </div>
                 <!-- post-right -->
@@ -115,7 +115,7 @@
                 <div class="post-right">
                   <div class="detail-post-right">
 					  <button type="button" class="btn btn-primary">
-					  	<a href="https://forms.gle/WHdbvL8jStQKv2Qp6" target="_blank">Yêu cầu của bạn</a>
+					  	<a href="https://forms.gle/C7toSYD1Mipybo2K7" target="_blank">Yêu cầu của bạn</a>
 					  </button>
                   </div>
                 </div>

@@ -60,7 +60,7 @@ while ($row4 = mysqli_fetch_array($result4)) {
   </script>
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0&appId=462828234866674" nonce="J8ZIdpDC"></script>
-   <div id="wrapper">
+  <div id="wrapper">
     <header class="header fixed">
       <!-- <div class="top-header sm-hidden py-4">
           <div class="container">
@@ -99,6 +99,13 @@ while ($row4 = mysqli_fetch_array($result4)) {
                       <a class="nav-link" href="admin/pages/login.php">ĐĂNG NHẬP</a>
                     </li>
                   </ul>
+                  <div class="search-container">
+                    <form action="search_new.php" method="post">
+                      <input type="text" name="search" placeholder="Tìm kiếm tên bài viết">
+                      <!-- <input type="submit" name="submit" value="Search"> -->
+                      <button type="submit" name="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                  </div>
                 </div>
               </nav>
             </div>
